@@ -56,6 +56,11 @@ test("commandsMatch: claude-code-acp matches claude-agent-acp", () => {
   assert.equal(commandsMatch("claude-code-acp", "claude-agent-acp"), true);
 });
 
+test("commandsMatch: claude CLI matches claude adapter commands", () => {
+  assert.equal(commandsMatch("claude", "claude-agent-acp"), true);
+  assert.equal(commandsMatch("claude", "claude-code"), true);
+});
+
 test("commandsMatch: path + claude normalization combined", () => {
   assert.equal(commandsMatch("/opt/bin/claude-code-acp", "claude-acp"), true);
 });

@@ -10,6 +10,7 @@ pub(crate) const KNOWN_AGENT_BINARIES: &[&str] = &[
     "buzz_acp",
     "buzz-agent",
     "buzz_agent",
+    "claude",
     "claude-agent-acp",
     "claude_agent_acp",
     "claude-code-acp",

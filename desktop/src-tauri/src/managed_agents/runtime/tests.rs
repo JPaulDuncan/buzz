@@ -563,6 +563,11 @@ fn name_matches_known_binary_rejects_node() {
 }
 
 #[test]
+fn name_matches_known_binary_accepts_claude() {
+    assert!(super::name_matches_known_binary("claude"));
+}
+
+#[test]
 fn name_matches_interpreter_accepts_node() {
     // `node` IS a known script interpreter and must be recognized.
     assert!(super::name_matches_interpreter("node"));
