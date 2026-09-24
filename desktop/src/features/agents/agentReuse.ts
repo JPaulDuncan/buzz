@@ -17,7 +17,13 @@ function commandBasename(command: string) {
 
 function normalizeCommandIdentity(command: string) {
   const lower = commandBasename(command).toLowerCase();
-  if (lower === "claude-code-acp" || lower === "claude-agent-acp") {
+  if (
+    lower === "claude" ||
+    lower === "claude-code" ||
+    lower === "claudecode" ||
+    lower === "claude-code-acp" ||
+    lower === "claude-agent-acp"
+  ) {
     return "claude-acp";
   }
   return lower;

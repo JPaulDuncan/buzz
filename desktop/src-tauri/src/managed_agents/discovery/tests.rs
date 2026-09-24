@@ -26,6 +26,10 @@ fn resolves_known_avatar_for_command_paths_and_aliases() {
         Some(CODEX_AVATAR_URL.to_string())
     );
     assert_eq!(
+        managed_agent_avatar_url("/usr/local/bin/claude"),
+        Some(CLAUDE_CODE_AVATAR_URL.to_string())
+    );
+    assert_eq!(
         managed_agent_avatar_url("Claude Code"),
         Some(CLAUDE_CODE_AVATAR_URL.to_string())
     );
@@ -56,6 +60,10 @@ fn default_agent_command_resolves_bundled_buzz_agent() {
 
 #[test]
 fn normalizes_claude_and_codex_args_to_empty() {
+    assert_eq!(
+        normalize_agent_args("claude", vec!["acp".into()]),
+        Vec::<String>::new()
+    );
     assert_eq!(
         normalize_agent_args("claude-agent-acp", vec!["acp".into()]),
         Vec::<String>::new()
