@@ -567,9 +567,7 @@ impl AcpClient {
         let standard_adapter =
             match crate::config::normalize_agent_command_identity(command).as_str() {
                 "claude" | "claude-agent-acp" | "claude-code-acp" | "claude-code"
-                | "claudecode" => {
-                    Some(StandardAdapterKind::Claude)
-                }
+                | "claudecode" => Some(StandardAdapterKind::Claude),
                 "codex" | "codex-acp" => Some(StandardAdapterKind::Codex),
                 _ => None,
             };
